@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="hide()">
+    <div id="tot">
+    Klikając ten przycisk akceptujesz pliki cookie
+    <button onclick="yes()">Akceptuje</button>
+    </div>
+    <script>
+        function yes() {
+            let button = document.getElementById("tot")
+            button.style.display = "none";
+            document.cookie = "coockieAccept: true";
+            window.alert("Gratulacje zaakceptowałeś pliki cookies!")
+        }
+        function hide(){
+            if(document.cookie == "coockieAccept: true"){
+                document.getElementById("tot").style.display = "none"
+        }
+        else
+            document.getElementById("tot").style.visibility = "block";
+    }
+    </script>
+</body>
+</html>
